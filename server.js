@@ -33,7 +33,7 @@ app.post("/generate-visemes", upload.single("audio"), (req, res) => {
     const outputFilePath = path.join(os.tmpdir(), `${Date.now()}-output.json`);
 
     // Rhubarb command to process the audio file and generate visemes
-    const command = `rhubarb-lip-sync "${tempFilePath}" -o "${outputFilePath}"`;
+    const command = `/usr/local/bin/rhubarb-lip-sync "${tempFilePath}" -o "${outputFilePath}"`;
 
     exec(command, (error, stdout, stderr) => {
       if (error) {
