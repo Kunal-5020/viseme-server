@@ -59,8 +59,10 @@ app.post("/generate-visemes", async (req, res) => {
     const outputFilePath = path.join(os.tmpdir(), `${Date.now()}-output.txt`);
 
     // Rhubarb command to process the audio file and generate viseme data
-    // Adjust the command path if necessary (e.g., `/usr/local/bin/rhubarb-lip-sync`)
-    const command = `rhubarb-lip-sync "${audioFilePath}" -o "${outputFilePath}"`;
+
+
+    const command = `/usr/local/bin/rhubarb-lip-sync/rhubarb "${audioFilePath}" -o "${outputFilePath}"`;
+
 
     exec(command, async (error, stdout, stderr) => {
       if (error) {
@@ -105,5 +107,5 @@ app.post("/generate-visemes", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Viseme server running at http://localhost:${port}`);
+  console.log(`Viseme server running 4 at http://localhost:${port}`);
 });
