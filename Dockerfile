@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y wget unzip curl libstdc++6
 COPY rhubarb /usr/local/bin/rhubarb-lip-sync
 
 # 🔹 Grant execute permissions to Rhubarb
-RUN chmod +x /usr/local/bin/rhubarb-lip-sync
+RUN chmod +x /usr/local/bin/rhubarb-lip-sync/rhubarb
 
 # Copy the application files
 COPY . .
